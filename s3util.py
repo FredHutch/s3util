@@ -35,7 +35,7 @@ def rename_s3_object(old_name, new_name):
     copy_source = dict(Bucket=old_bucket, Key=old_path)
     # print(copy_source)
     # TODO try/except these lines:
-    S3.copy_object(CopySource=copy_source, Bucket=new_bucket, Key=new_path)
+    S3.copy(CopySource=copy_source, Bucket=new_bucket, Key=new_path)
     S3.delete_object(Bucket=old_bucket, Key=old_path)
     return True
 
